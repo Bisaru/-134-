@@ -12,8 +12,6 @@ print(n)
 print("Вторая карта закрыта")
 i = random.randint(0, (len(a) - 1))
 n+=a[i]
-if n>21:
-    n=n-10;
 a.pop(i)
 for j in range (2):
     i = random.randint(0, (len(a) - 1))
