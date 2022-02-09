@@ -1,0 +1,40 @@
+import random
+a=[1,1,1,1,2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5,6,6,6,6,7,7,7,7,8,8,8,8,9,9,9,9,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,11,11,11,11]
+b=1
+c=0
+n=0
+i=0
+m=0
+i = random.randint(0, (len(a) - 1))
+n+=a[i]
+a.pop(i)
+print(n)
+print("Вторая карта закрыта")
+i = random.randint(0, (len(a) - 1))
+n+=a[i]
+if n>21:
+    n=n-10;
+a.pop(i)
+for j in range (2):
+    i = random.randint(0, (len(a) - 1))
+    c+=a[i]
+    a.pop(i)
+print(c);
+b=int(input("Взять еще карту? Да-1, Нет-0"))
+if b>m:
+    while b>m and c<21:
+        i = random.randint(0, (len(a) - 1))
+        c += a[i]
+        a.pop(i)
+        print(c)
+        b=int(input("Взять еще карту? Да-1, Нет-0"))
+print(c)
+print("Карты дилера")
+print(n)
+if n==c and c<=21:
+    print("Пуш")
+if n<c and c<=21:
+    print("Победа")
+if n>c or c>21:
+    print("Поражение")
+
